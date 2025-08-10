@@ -9,10 +9,11 @@ function RenderNote(props) {
     const [inputUpdate, setInputUpdate] = useState("");
     const [titleUpdate, setTitleUpdate] = useState("");
     const [notePic, setNotePic] = useState(0)
+    const [searchNote, setSearchNote] = useState("")
+ let arr =props;
 
-
- const categories = {
-        choose :"",
+    const categories = {
+        choose: "",
         Personal: '#FFD700',
         Work: '#87CEEB',
         Shopping: '#90EE90',
@@ -20,12 +21,16 @@ function RenderNote(props) {
     };
 
     function ToDeleteNote(indexToDelete) {
-        props.onDelete(indexToDelete);
+        arr.onDelete(indexToDelete);
     }
 
     function updateText(notePic, inputUpdate, updateTitle) {
-        props.onUpdate(notePic, inputUpdate, updateTitle)
+        arr.onUpdate(notePic, inputUpdate, updateTitle)
         closeModel()
+    }
+    function searchNoteByText(e) {
+        setSearchNote(e.target.value)
+    
     }
 
 
@@ -43,15 +48,16 @@ function RenderNote(props) {
         setInputUpdate("");
     }
 
-    
+
 
     return (
         <>
-
+            <input value={searchNote} onChange={searchNoteByText} placeholder='Search Notes..' />
             <div className='container'>
-                {Object.keys(props.obj).length === 1 ? "" :
-                    Object.keys(props.obj).filter(key => key !== "nextIndex").map((el) => (
-                        <div style={{backgroundColor:`${categories[props.obj[el].cat]}`}} className='parent-note'>
+
+                {Object.keys(arr.obj).length === 1 ? "" :
+                    Object.keys(arr.obj).filter(key => key !== "nextIndex" && props.obj[key]?.text?.startsWith(searchNote)).map((el) => (
+                        <div style={{ backgroundColor: `${categories[props.obj[el].cat]}` }} className='parent-note'>
                             <div >
                                 {console.log(categories[props.obj[el].cat])}
                                 <p onClick={() => ToDeleteNote(el)} className='text'>X</p>
