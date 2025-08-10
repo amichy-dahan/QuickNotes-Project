@@ -7,6 +7,13 @@ import RenderNote from './RenderNote'
 
 function MakeNotes() {
 
+ const categories = {
+        choose :"",
+        Personal: '#FFD700',
+        Work: '#87CEEB',
+        Shopping: '#90EE90',
+        Others: '#D3D3D3',
+    };
 
 
     const [notes, setNotes] = useState({ nextIndex: 0 });

@@ -10,7 +10,9 @@ function RenderNote(props) {
     const [titleUpdate, setTitleUpdate] = useState("");
     const [notePic, setNotePic] = useState(0)
 
-    const categories = {
+
+ const categories = {
+        choose :"",
         Personal: '#FFD700',
         Work: '#87CEEB',
         Shopping: '#90EE90',
@@ -49,9 +51,9 @@ function RenderNote(props) {
             <div className='container'>
                 {Object.keys(props.obj).length === 1 ? "" :
                     Object.keys(props.obj).filter(key => key !== "nextIndex").map((el) => (
-                        
                         <div style={{backgroundColor:`${categories[props.obj[el].cat]}`}} className='parent-note'>
                             <div >
+                                {console.log(categories[props.obj[el].cat])}
                                 <p onClick={() => ToDeleteNote(el)} className='text'>X</p>
                                 <p className='date-look'>{props.obj[el].date}</p>
                             </div>
