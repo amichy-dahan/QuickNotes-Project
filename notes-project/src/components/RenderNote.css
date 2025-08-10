@@ -14,6 +14,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 260px;
 }
+
 .parent-note-update {
   background-color: #ffffff;
   border-radius: 12px;
@@ -26,7 +27,7 @@
 
 .parent-note:hover {
   transform: translateY(-4px);
-  
+
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
@@ -69,14 +70,14 @@
 
 .note-text {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   color: #333;
 }
 
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +88,7 @@
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 5px 13px 25px rgba(255, 0, 0, 0.25); 
+  box-shadow: 5px 13px 25px rgba(255, 0, 0, 0.25);
   width: 320px;
   max-width: 90%;
   animation: fadeIn 0.2s ease-in-out;
@@ -98,28 +99,35 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-.note-pos-update {
+.note-pos-update {}
 
-}
-
-.input-update{
+.input-update {
 
   width: 100%;
   height: 100px;
 }
 
-.note-title{
-   text-align: center;
+.note-title {
+  text-align: center;
   font-size: 15px;
   color: #333;
-   margin-top: -30px;
-   font-weight: bold;
-   margin-bottom: 20px;
+  margin-top: -30px;
+  font-weight: bold;
+  margin-bottom: 20px;
   text-decoration: underline;
+}
+
+.note-update {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  width: 80px;
+  color: #868282;
 }

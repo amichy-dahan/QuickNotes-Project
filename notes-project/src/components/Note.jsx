@@ -11,6 +11,14 @@ function Note({name}) {
             <div className='note-text'>
              {name.text}
             </div>  
+
+
+              <div className='note-update'>
+
+            {
+               name.updateDate !== ""? `Last update : ${name.updateDate}`: ""
+            }   
+            </div>  
         </>
 
     )

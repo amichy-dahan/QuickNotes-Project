@@ -16,7 +16,7 @@ function MakeNotes() {
         let stringDate = makeDate()
         console.log(stringDate)
         let obj = { ...notes };
-        obj[obj.nextIndex] = {text:textArea,date:stringDate,title:textTilte}
+        obj[obj.nextIndex] = {text:textArea,date:stringDate,title:textTilte ,updateDate:""}
         obj.nextIndex++;
         setNotes(obj)
        setTitle("")
@@ -24,9 +24,11 @@ function MakeNotes() {
         
     }
        function updateNoteToArr(notePic , inputUpdate , updateTitle)  {
+        let updateDate = makeDate()
         let obj = { ...notes };
         obj[notePic].text = inputUpdate
         obj[notePic].title = updateTitle
+        obj[notePic].updateDate = updateDate
         setNotes(obj)
     }
      

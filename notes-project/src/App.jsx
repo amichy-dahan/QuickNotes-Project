@@ -8,6 +8,9 @@ import MakeNotes from './components/MakeNotes'
 function App() {
   const [click, setClick] = useState(false)
 
+
+
+
   return (
     <>
       {
@@ -19,6 +22,7 @@ function App() {
             <br></br>
             <h1> Click Here to make notes</h1>
             <img src={imge} />
+          
             <button onClick={() => setClick(true)} className='btn'>notes!</button>
           </>
           :
