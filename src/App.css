@@ -1,4 +1,4 @@
-/* עיצוב בסיסי לכל הדף */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* רקע כללי ומרכז התוכן */
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -16,7 +16,7 @@
   padding: 30px 15px;
 }
 
-/* כפתור כללי */
+
 .btn {
   padding: 15px 40px;
   background-color: #ff4d4d;
@@ -37,7 +37,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
-/* כותרת עליונה */
+
 h1 {
   font-size: 32px;
   margin-bottom: 25px;
@@ -45,7 +45,7 @@ h1 {
   text-align: center;
 }
 
-/* סגנון כללי לקונטיינר התוכן */
+
 .main-content {
   width: 100%;
   max-width: 1280px;
@@ -55,7 +55,7 @@ h1 {
   gap: 25px;
 }
 
-/* עיצוב רספונסיבי */
+
 @media (max-width: 768px) {
   #root {
     padding: 20px 10px;
