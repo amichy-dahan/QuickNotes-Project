@@ -3,21 +3,29 @@ import Note from './Note';
 
 import { useState } from 'react';
 
+
 function RenderNote(props) {
     const [opened, setOpened] = useState(false);
     const [inputUpdate, setInputUpdate] = useState("");
     const [titleUpdate, setTitleUpdate] = useState("");
     const [notePic, setNotePic] = useState(0)
 
+    const categories = {
+        Personal: '#FFD700',
+        Work: '#87CEEB',
+        Shopping: '#90EE90',
+        Others: '#D3D3D3',
+    };
+
     function ToDeleteNote(indexToDelete) {
         props.onDelete(indexToDelete);
     }
 
-    function updateText(notePic, inputUpdate , updateTitle) {
-        props.onUpdate(notePic, inputUpdate , updateTitle)
+    function updateText(notePic, inputUpdate, updateTitle) {
+        props.onUpdate(notePic, inputUpdate, updateTitle)
         closeModel()
     }
-     
+
 
     function modelOpen(el) {
         setInputUpdate(props.obj[el].text);
@@ -33,13 +41,16 @@ function RenderNote(props) {
         setInputUpdate("");
     }
 
+    
+
     return (
         <>
 
             <div className='container'>
                 {Object.keys(props.obj).length === 1 ? "" :
                     Object.keys(props.obj).filter(key => key !== "nextIndex").map((el) => (
-                        <div className='parent-note'>
+                        
+                        <div style={{backgroundColor:`${categories[props.obj[el].cat]}`}} className='parent-note'>
                             <div >
                                 <p onClick={() => ToDeleteNote(el)} className='text'>X</p>
                                 <p className='date-look'>{props.obj[el].date}</p>
@@ -64,7 +75,7 @@ function RenderNote(props) {
                             <div className='note-pos-update'>
                                 <input onChange={(e) => setTitleUpdate(e.target.value)} value={titleUpdate} />
                                 <input className='input-update' onChange={(e) => setInputUpdate(e.target.value)} value={inputUpdate} />
-                                <button onClick={() => updateText(notePic, inputUpdate , titleUpdate)}>Update</button>
+                                <button onClick={() => updateText(notePic, inputUpdate, titleUpdate)}>Update</button>
                             </div>
                         </div>
                     </div>

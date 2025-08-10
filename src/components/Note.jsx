@@ -2,6 +2,8 @@
 import './RenderNote.css'
 function Note({name}) {
 
+
+
     return (
 
         <>  
