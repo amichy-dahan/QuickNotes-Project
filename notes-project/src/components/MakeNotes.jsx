@@ -23,11 +23,13 @@ function MakeNotes() {
        setTextArea("")
         
     }
-       function updateNoteToArr(notePic , inputUpdate)  {
+       function updateNoteToArr(notePic , inputUpdate , updateTitle)  {
         let obj = { ...notes };
         obj[notePic].text = inputUpdate
+        obj[notePic].title = updateTitle
         setNotes(obj)
     }
+     
 
     function DeleteNoteFromArr(indexToDelete) {
         let obj = { ...notes };
@@ -60,7 +62,7 @@ function MakeNotes() {
                 <button onClick={AddNoteToArr} className='btn-Add'>Add</button>
 
             </div>
-            <RenderNote obj={notes} onDelete={DeleteNoteFromArr} onUpdate={updateNoteToArr}/>
+            <RenderNote obj={notes} onDelete={DeleteNoteFromArr} onUpdate={updateNoteToArr} />
         </>
 
     )

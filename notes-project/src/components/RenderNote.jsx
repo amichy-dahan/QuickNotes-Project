@@ -6,19 +6,22 @@ import { useState } from 'react';
 function RenderNote(props) {
     const [opened, setOpened] = useState(false);
     const [inputUpdate, setInputUpdate] = useState("");
+    const [titleUpdate, setTitleUpdate] = useState("");
     const [notePic, setNotePic] = useState(0)
 
     function ToDeleteNote(indexToDelete) {
         props.onDelete(indexToDelete);
     }
 
-    function updateText(notePic, inputUpdate) {
-        props.onUpdate(notePic, inputUpdate)
+    function updateText(notePic, inputUpdate , updateTitle) {
+        props.onUpdate(notePic, inputUpdate , updateTitle)
         closeModel()
     }
+     
 
     function modelOpen(el) {
         setInputUpdate(props.obj[el].text);
+        setTitleUpdate(props.obj[el].title);
         console.log(el)
         setNotePic(el);
         console.log(el)
@@ -59,8 +62,9 @@ function RenderNote(props) {
 
                             <h3>Note Details</h3>
                             <div className='note-pos-update'>
+                                <input onChange={(e) => setTitleUpdate(e.target.value)} value={titleUpdate} />
                                 <input className='input-update' onChange={(e) => setInputUpdate(e.target.value)} value={inputUpdate} />
-                                <button onClick={() => updateText(notePic, inputUpdate)}>Update</button>
+                                <button onClick={() => updateText(notePic, inputUpdate , titleUpdate)}>Update</button>
                             </div>
                         </div>
                     </div>
