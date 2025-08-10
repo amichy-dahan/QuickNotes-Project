@@ -1,0 +1,77 @@
+/* עיצוב בסיסי לכל הדף */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* רקע כללי ומרכז התוכן */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+  padding: 30px 15px;
+}
+
+/* כפתור כללי */
+.btn {
+  padding: 15px 40px;
+  background-color: #ff4d4d;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #e64040;
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* כותרת עליונה */
+h1 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+/* סגנון כללי לקונטיינר התוכן */
+.main-content {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+  #root {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .main-content {
+    gap: 15px;
+  }
+}
